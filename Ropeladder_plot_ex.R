@@ -7,7 +7,7 @@ df<-read.csv(text=getURL("https://raw.githubusercontent.com/connorjmccabe/Sample
 head(df)
 
 #Sample code of how to do some clean-up:
-rummj_smw.params.clean<-rummj_smw.params %>%
+rummj_smw.params.clean<-df %>%
   mutate(param=as.character(param)) %>%
   # This recodes the ordinal axis to something more sensible compared to lavaan output. Just 2 examples:
   mutate(param = ifelse(param == "rum_int~smw", "SM Status->Rumination Int.", param),
